@@ -3,12 +3,12 @@
 
 def my_decorator(func):
     def wrapper():
-        print(".....wrapper before gift shows.....")
+        print(".....runs before actual function.....")
         func()
-        print(".....wrapper after gift shows.....")
+        print(".....runs after actual function.....")
     return wrapper
 
-# # one way
+#  one way
 def gift():
     print(".....actual gift....")
 

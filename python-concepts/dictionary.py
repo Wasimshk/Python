@@ -12,6 +12,8 @@ print(d)
 # 3. From zip()
 keys = ['a', 'b', 'c']
 values = [1, 2, 3]
+z = zip(keys, values)
+print(list(z))  # [('a', 1), ('b', 2), ('c', 3)]
 d = dict(zip(keys, values))
 print(d)
 
@@ -46,6 +48,7 @@ for value in my_dict.values():
     print(value)
 
 # Iterating through key-value pairs: The .items() method returns key-value pairs as tuples, which can be unpacked directly within the for loop. This is a common and efficient way to access both keys and values simultaneously.
+
 for key, value in my_dict.items():
     print(f"for the key-{key} the value is: {value}")
 
