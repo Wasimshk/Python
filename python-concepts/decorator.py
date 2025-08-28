@@ -60,3 +60,20 @@ def money_transfer(money):
 
 money = int(input("Please enter the amount to start the transaction:"))
 money_transfer(money)
+
+# //////////////////////////////////////////
+# how to pass argument to the decorator function
+def repeater(n):
+    def decorator(func):
+        def wrapper(name):
+            print("before function execution....")
+            for i in range(n):
+                func(name)
+            print("after function execution....")
+        return wrapper
+    return decorator
+
+@repeater(3)
+def hello(name):
+    print(f"Hello, {name}!")
+hello("Wasim")

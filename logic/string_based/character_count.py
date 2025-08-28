@@ -4,9 +4,10 @@ d = {}
 # d['a'] = d.get('a', 0) + 1
 
 for i in str:
-    if i in d:
-        d[i] += 1
-    else:
-        d[i] = 1
-
+    # if i in d:
+    #     d[i] += 1
+    # else:
+    #     d[i] = 1
+    # above 4 lines are equivalent to the below
+    d[i] = d.get(i, 0) + 1
 print(d)

@@ -8,6 +8,7 @@ class Point:
         self.y = y
 
     def print_point(self):
+        """This string is called a doc string and this function prints the point coordinates, hover over function call to see this string or use print_point.__doc__ """
         print(f"X = {self.x} and Y = {self.y}")
 
     # this sum function takes class object as an argument and returns the class object
@@ -110,3 +111,6 @@ print("is p1 not equals to p2?",p1!=p2)
 # point distance
 d = p1.point_distance(p2)
 print("Distance between point is:", d)
+
+# prints the doc string
+print(p1.print_point.__doc__)

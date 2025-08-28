@@ -1,4 +1,22 @@
-# filepath: /python-collections-app/python-collections-app/src/tuple.py
+"""
+Why use Tuples:
+Faster than lists (since they are immutable)
+Used as dictionary key(since they are hashable)
+Safe from unintended modification
+"""
+
+# How to create
+my_tup = (10, 20, 30)
+single_elem = (12,) # tuple with single element required comma
+
+# access tuple
+print(my_tup[1])
+
+# Tuple unpacking
+a, b, c = (3, 6, 9)
+print(a, b, c)
+
+
 
 def create_tuple(*args):
     """Create a tuple from the given arguments."""
