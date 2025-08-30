@@ -9,7 +9,7 @@ def divide(a, b):
         return None
     # currently else block will never execute as we are returning the value in try block
     else:
-        print("no issues found")
+        print("no issues found in try")
 
     # executes everytime before the return statement
     finally:
