@@ -1,0 +1,165 @@
+
+# Configuring Git
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git config --global core.editor "code --wait" # optional, sets VS Code as editor
+git config --list
+git init
+
+
+# Regular workflow
+git status
+git add .            \git add hello.txt
+git commit -m "commit message"
+git push
+
+# clone
+git clone https://github.com/user/repo.git
+
+# commit history
+git log
+git log --oneline
+
+# Viewing Changes
+git diff    #unstaged
+git diff --staged       #staged
+git diff HEAD~1 HEAD        #changes between commits
+
+# Undoing Changes
+git restore file.txt        #restore to last commit
+git restore .
+git restore --staged file.txt   #To remove files from staging area but keep changes:
+
+# Amend the Last Commit
+Forgot to include a file or want to change the commit message?
+# Stage the forgotten file
+git add forgotten.txt
+# Amend the previous commit
+git commit --amend -m "New commit message"
+
+
+# Git Ignore
+# Ignore specific files
+secret.txt
+config.env
+# Ignore file types
+*.log
+*.tmp
+*.cache
+# Ignore directories
+node_modules/
+build/
+dist/
+# Ignore files in any directory
+**/*.bak
+# Exception: Track this file even if ignored
+!important.log
+# Set up a global ignore file for all repositories:
+git config --global core.excludesfile ~/.gitignore_global
+
+
+# remove files
+# Remove File from Repository and Disk
+git rm file.txt
+git commit -m "Remove file.txt"
+# Remove File from Repository but Keep on Disk
+git rm --cached file.txt
+git commit -m "Stop tracking file.txt"
+
+# move/rename
+git mv oldname.txt newname.txt
+git commit -m "Rename oldname.txt to newname.txt"
+
+# merge and checkout
+git branch  # view current branch
+git branch -a   #view all branch
+git branch wip\wasim   #create new branch
+git checkout wip\wasim  #Switch to a Branch
+git checkout -b feature-navbar      #create and switch the branch
+git merge origin/main   #merge main branch to wip branch
+
+# resolve conflict
+# Keep current branch changes (ours):
+git checkout --ours index.html
+# Keep incoming branch changes (theirs):
+git checkout --theirs index.html
+
+# delete a branch
+# Delete local branch
+git branch -d feature-navbar
+# Force delete (if not merged)
+git branch -D feature-navbar
+
+# rename a branch
+# Rename current branch
+git branch -m new-name
+# Rename a different branch
+git branch -m old-name new-name
+
+# List Merged/Unmerged Branches
+# Show merged branches
+git branch --merged
+# Show unmerged branches
+git branch --no-merged
+
+# Connecting to Remotes
+# view remotes
+git remote -v
+# Add Remote
+git remote add origin https://github.com/username/repository.git
+
+# push changes
+# First push (set upstream)
+git push -u origin main
+# Regular push
+git push
+# Push specific branch
+git push origin branch-name
+
+# Pull Changes
+# Pull (fetch + merge)
+git pull
+# Pull specific branch
+git pull origin branch-name
+
+# Fetch Changes
+git fetch
+# Fetch all remotes
+git fetch --all
+
+
+#git stash
+Git stash temporarily saves your uncommitted changes so you can work on
+something else, then come back and re-apply them later.
+# Stash all changes
+git stash
+# Stash with a message
+git stash save "work in progress on feature X"
+# Include untracked files
+git stash -u
+# List all stashes
+git stash list
+# Apply most recent stash
+git stash apply
+# Apply specific stash
+git stash apply stash@{2}
+# Apply and remove from stash list
+git stash pop
+
+
+
+
+
+# Command Summary
+# Command Description
+git status Show working tree status
+git diff Show unstaged changes
+git diff --staged Show staged changes
+git restore [file] Discard working directory changes
+git restore --staged [file] Unstage files
+git reset --soft HEAD~1 Undo last commit, keep changes staged
+git reset HEAD~1 Undo last commit, keep changes unstaged
+git reset --hard HEAD~1 Undo last commit, discard changes
+git rm [file] Remove file from repository
+git rm --cached [file] Stop tracking file
+git mv [old] [new] Rename/move file

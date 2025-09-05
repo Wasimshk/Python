@@ -5,6 +5,7 @@ class Animal:
         print("This is my sound: ", end="")
 
 class Dog(Animal):
+    # pass
     def speak(self):
         super().speak()
         print("Woof! Woof!")

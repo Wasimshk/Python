@@ -1,4 +1,10 @@
 # filepath: /python-collections-app/python-collections-app/src/list.py
+# arr.remove(2) # removes first occurrence of 2
+# arr.pop(2) # removes element at index 2
+
+# arr.append(20) # adds 20 at the end of the list
+# arr.insert(2, 15) # adds 15 at index 2
+
 
 def add_element(my_list, element):
     my_list.append(element)

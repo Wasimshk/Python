@@ -10,4 +10,4 @@ with open("filehandling.txt", "a") as appendObj:
     hope you are good!
     """
     appendObj.write(s)
-    appendObj.close()
+    # appendObj.close()

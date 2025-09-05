@@ -6,7 +6,6 @@ target = 9
 for i in arr:
     for j in arr:
         if i + j == target:
-
             print((i, j))
             arr.remove(i)
 
