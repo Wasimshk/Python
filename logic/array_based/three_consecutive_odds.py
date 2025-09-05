@@ -1,26 +1,27 @@
-arr1 = [3, 5, 4, 1]
+arr1 = [3, 5, 3, 1]
 arr2 = [5, 7, 34, 1, 4, 9, 7, 25, 12]
 
-def three_consecutive_odds(arr1):
-    """
-    This function checks if there are three consecutive odd numbers in the given array.
-    :param arr1: List of integers
-    :return: True if there are three consecutive odd numbers, False otherwise
-    """
+def three_consecutive_odds(arr):
+    # for i in range(len(arr)-2):
+    #     if arr[i] % 2 == 1 and arr[i+1] % 2 == 1 and arr[i+2] % 2 == 1:
+    #         return True
+    # return False
+
     # counter = 0
-    # for i in arr1:
-    #     if i % 2 ==1:
+    # for num in arr:
+    #     if num % 2 == 1:
     #         counter += 1
     #         if counter == 3:
     #             return True
-    #     else: 
+    #     else:
     #         counter = 0
     # return False
 
-    for i in arr1:
-        if i % 2 == 1:
-            if arr1.index(i) + 2 < len(arr1) and arr1[arr1.index(i) + 1] % 2 == 1 and arr1[arr1.index(i) + 2] % 2 == 1:
-                return True
+    for i in range(len(arr) - 2):
+        window = arr[i:i+3]
+        if all(x % 2 == 1 for x in window):
+            return f"found 3 consecutive odd numbers at position {i+1}:{i+3}"
+    return False
 
-print(three_consecutive_odds(arr1))  # Output: True
-print(three_consecutive_odds(arr2))  # Output: False
+print(three_consecutive_odds(arr1))
+print(three_consecutive_odds(arr2))
