@@ -29,7 +29,7 @@ delete a package
 
 show the packages with version number
     pip freeze
-        shows the packahes in the following form ->> requests==2.32.5
+        shows the packages in the following form ->> requests==2.32.5
 
 create a requirement.txt with all the required packages
     pip freeze > requirements.txt

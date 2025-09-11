@@ -19,12 +19,24 @@ def display_list(my_list):
     return my_list
 
 # Usage examples
-if __name__ == "__main__":
-    my_list = [1, 2, 3]
-    print("Original List:", display_list(my_list))
-    
-    my_list = add_element(my_list, 4)
-    print("After Adding 4:", display_list(my_list))
-    
-    my_list = remove_element(my_list, 2)
-    print("After Removing 2:", display_list(my_list))
+
+my_list = [1, 2, 3]
+print("Original List:", display_list(my_list))
+
+my_list = add_element(my_list, 4)
+print("After Adding 4:", display_list(my_list))
+
+my_list = remove_element(my_list, 2)
+print("After Removing 2:", display_list(my_list))
+
+# looping over list of tuples
+edges = [(1, 2), (1, 3), (2, 4), (3, 4)]
+for i in edges:
+    print(i)    #o/p (1, 2)
+
+for i, j in edges:
+    print(i, j) #o/p 1 2
+
+edges = [(1, 2, 3), (1, 3, 2), (2, 4, 5), (3, 4, 6)]
+for i, j, k in edges:
+    print(i, j, k)  #o/p 1 2 3

@@ -56,3 +56,25 @@ if __name__ == "__main__":
     print("Difference: ", set1 - set2)
     # Symmetric difference → items in either set1 or set2, but not in both
     print("Symmetric difference: ", set1 ^ set2)
+
+    # set comprehension
+    set1 = {1, 2, 3, 4, 5}
+    set2 = {4, 5, 6, 7}
+    common = {n for n in set1 if n in set2}
+    print(common)
+
+
+    # important note
+    set1 = {1, 2, 3}
+    set3 = set1 # Here, set3 does NOT create a new set., Both set3 and set1 point to the same object in memory.
+
+    set3.add(4)
+    print(set1)  # {1, 2, 3, 4}
+    print(set3)  # {1, 2, 3, 4}
+
+    set1 = {1, 2, 3}
+    set3 = set1.copy() #.copy() creates a new set with the same elements.
+
+    set3.add(4)
+    print(set1)  # {1, 2, 3}
+    print(set3)  # {1, 2, 3, 4}
