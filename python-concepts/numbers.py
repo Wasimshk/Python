@@ -25,3 +25,5 @@ print(type(c))
 import random
 
 print(random.randrange(999))
+
+print([random.randrange(999) for i in range(10)])

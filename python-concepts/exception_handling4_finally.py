@@ -2,7 +2,7 @@
 
 def divide(a, b):
     try:
-        return "the division of two number is: ", a/b
+        operation = "the division of two number is: ", a/b
 
     except ZeroDivisionError:
         print("Do not divide by Zero")
@@ -10,6 +10,7 @@ def divide(a, b):
     # currently else block will never execute as we are returning the value in try block
     else:
         print("no issues found in try")
+        return operation
 
     # executes everytime before the return statement
     finally:

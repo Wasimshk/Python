@@ -1,6 +1,6 @@
 import requests
 import multiprocessing
-
+# from multiprocessing import Process
 
 def worker(num):
     print(f"Process {num}: Starting")
@@ -13,6 +13,7 @@ def worker(num):
 if __name__ == "__main__":
     processes = []
     for i in range(1, 6):
+        # process = Process(target=worker, args=(i,))
         process = multiprocessing.Process(target=worker, args=(i,))
         processes.append(process)
         process.start()
